@@ -100,6 +100,8 @@ l {
 }
 l:hover{
   letter-spacing: .1rem;
+  background-color: #ff5700;
+  color: #000000;
 
 }
 
@@ -133,6 +135,39 @@ l:hover::after{
 a {
   text-decoration: none;
   color: white;
+}
+
+
+.photo-container {
+  display: flex;               /* image left, info right */
+  align-items: center;
+  gap: 16px;                   /* space between image and text */
+  margin: 30px;
+  border-radius: 10px;
+}
+
+.photo {
+  width: 50vw;
+  height:auto;
+  border-radius: 10px;
+  border: 0px solid #fff;
+  transition: transform 0.3s ease;
+}
+
+.photo-info {
+  opacity: 0;                  /* hidden by default */
+  transform: translateX(-10px); /* shifted slightly */
+  transition: opacity var(--t-fast) var(--easing), transform var(--t-fast) var(--easing);
+}
+
+.photo:hover {
+  transform: scale(1.03);      /* grow slightly */
+  border: 1px solid #fff;
+}
+
+.photo:hover + .photo-info {
+  opacity: 1;
+  transform: translateX(0);    /* slide into place */
 }
 .writing_box{
   width:50vw;
