@@ -170,11 +170,10 @@ a {
   opacity: 1;
   transform: translateX(0);    /* slide into place */
 }
-.writing_box{
+.writing-box{
   width:90vw;
   height:fit-content;
-  border:2px solid white;
-  border-radius: 1px;
+  border:1px solid white;
   padding: 10px;
   margin-top:4px;
   margin-bottom:4px;
@@ -187,7 +186,7 @@ a {
   transition: all var(--t-slow) var(--easing)
 
 }
-.writing_box.collapsed .content{
+.writing-box.collapsed .content{
   overflow: hidden;
   max-height: 2.8em;
 }
@@ -217,9 +216,25 @@ a {
 
 /* Optional: nicer animation when expanding/collapsing */
 .writing-box .content {
-  transition: max-height 200ms ease;
+  transition: max-height var(--t-slow) var(--easing);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .writing-box .content { transition: none; }
+}
+.box {
+  width:90vw;
+  height:fit-content;
+  padding: 10px;
+  margin-top:4px;
+  margin-bottom:4px;
+  display:flex;
+  align-items: stretch;
+  justify-content: stretch;
+  white-space: normal;
+  word-break: normal;
+  cursor: pointer;
+  transition: all var(--t-slow) var(--easing)
+
+}
 }
