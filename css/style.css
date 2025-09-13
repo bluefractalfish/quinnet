@@ -26,6 +26,7 @@ body {
 
 .page{
   padding-top: var(--header-h);
+  text-align: left;
 }
 
 .head {
@@ -33,7 +34,7 @@ body {
   display: flex;
   background: black;
   padding: 10px;
-  inset: 0px  20px 2px;
+  inset: 0px  2px 2px;
   height: var(--header-h);
   justify-content: left;
   align-items: center;
@@ -46,12 +47,12 @@ body {
   grid-template-columns: auto auto auto;
   align-items: center;
   column-gap: 0;
-  justify-items: center;
+  justify-items: right;
   color: #171330;
   background-color: var(--accent-color);
   text-decoration: none;
-  padding: 3px 4px;
-  margin-right: 20px;
+  padding:2px 2px 2px 2px;
+  margin: 5px;
   cursor: pointer;
   font-weight: bold;
   transition: all var(--t-med) var(--easing);
@@ -170,16 +171,55 @@ a {
   transform: translateX(0);    /* slide into place */
 }
 .writing_box{
-  width:50vw;
+  width:90vw;
   height:fit-content;
-  border:3px solid white;
-  padding: 4px;
-  transform: translateX(70%);
+  border:2px solid white;
+  border-radius: 1px;
+  padding: 10px;
   margin-top:4px;
   margin-bottom:4px;
   display:flex;
   align-items: stretch;
   justify-content: stretch;
   white-space: normal;
-  word-break: break-all;
+  word-break: normal;
+  cursor: pointer;
+  transition: all var(--t-slow) var(--easing)
+
+}
+.writing_box.collapsed .content{
+  overflow: hidden;
+  max-height: 2.8em;
+}
+
+@supports (-webkit-line-clamp: 2) {
+  .writing-box.collapsed .content {
+    max-height: none;                /* superseded by clamp */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: clip;                  /* avoids scrollbars */
+  }
+}
+
+/* 3) If your browser supports the unprefixed property */
+@supports (line-clamp: 2) {
+  .writing-box.collapsed .content {
+    display: block;
+    line-clamp: 2;
+  }
+}
+
+.writing-box:not(.collapsed) .content {
+  max-height: none;
+  overflow: visible;
+}
+
+/* Optional: nicer animation when expanding/collapsing */
+.writing-box .content {
+  transition: max-height 200ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .writing-box .content { transition: none; }
 }
