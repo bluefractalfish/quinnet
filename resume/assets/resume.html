@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>qu.in.net/resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Quins resume: Mathematics, Computer Science, research & engineering experience." />
+  <style>
+    /* ---------- Base / Theme ---------- */
+    :root{
+      --bg:#0b0b0b; 
+      --fg:#eaeaea;
+      --muted:#9aa0a6;
+      --accent:#ff8c32;
+      --rule:#2a2a2a;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      --serif: ui-serif, "Times New Roman", Georgia, serif;
+    }
+    @media (prefers-color-scheme: light){
+      :root{ 
+        --bg:#ffffff; 
+        --fg:#1a1a1a; 
+        --muted:#444; 
+        --rule:#e5e5e5; 
+        --accent:#c8551e; }
+    }
+    html{ 
+      box-sizing:border-box; 
+      -webkit-text-size-adjust:100%; 
+    }
+    *,*:before,*:after{ 
+      box-sizing:inherit; 
+    }
+    body{
+      margin:0; 
+      background:var(--bg); 
+      color:var(--fg);
+      font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans", "Liberation Sans", Arial, sans-serif;
+    }
+    a{ 
+      color:var(--fg); 
+      text-decoration:none; 
+      border-bottom:1px solid var(--rule); }
+    a:hover{ 
+      color:var(--accent); 
+      border-bottom-color:var(--accent); }
+    .page{
+      max-width: 800px; 
+      margin: 2rem auto; 
+      padding: 2rem 1.2rem;
+    }
+    header{ 
+      margin-bottom: 1.25rem; 
+    }
+    h1{
+      font-family: var(--mono); 
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      letter-spacing: .5px; margin:0 0 .25rem;
+    }
+    .meta{ 
+      color:var(--muted); 
+      font-family:var(--mono); 
+      display:flex; 
+      flex-wrap:wrap; 
+      gap:.75rem; }
+    .meta a{ 
+      border-bottom:none 
+    }
+    .toolbar{ 
+      margin:.6rem 0 1.4rem;
+      display:flex;
+      gap:.75rem;
+      flex-wrap:wrap; }
+    .btn{
+      display:inline-block;
+      font-family:var(--mono);
+      font-size:.9rem;
+      padding:.4rem .6rem;
+      border:1px solid var(--rule);
+      border-radius:.6rem;
+      background:transparent;
+      color:var(--fg);
+    }
+    .btn:hover{ 
+      border-color:var(--accent);
+      color:var(--accent); 
+    }
+
+    hr{ border:0; 
+      border-top:1px solid var(--rule); 
+      margin: 1.2rem 0; 
+    }
+
+    /* ---------- Layout ---------- */
+    section{ margin: 1.2rem 0 1.6rem; }
+    h2{
+      font-size:1.05rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted);
+      margin: 0 0 .2rem; font-family:var(--mono);
+    }
+    .item{ display:grid; grid-template-columns: 1fr auto; gap:.25rem .75rem; padding:.6rem 0; border-bottom:1px dashed var(--rule); }
+    .item:last-child{ border-bottom:0; }
+    .role, .school{ font-weight:600; }
+    .org, .place{ color:var(--muted); }
+    .when{ color:var(--muted); font-family:var(--mono); white-space:nowrap; }
+    .bullets{ grid-column: 1 / -1; margin:.25rem 0 0 .95rem; }
+    .bullets li{ margin:.15rem 0; }
+    .skills{ columns: 2 18rem; column-gap: 2rem; }
+    .skills li{ break-inside: avoid; margin:.15rem 0; }
+
+    /* ---------- Print ---------- */
+    @media print{
+      :root{ --bg:#fff; --fg:#000; --muted:#333; --rule:#ccc; --accent:#000; }
+      body{ font-size:12px; }
+      .page{ margin:0; padding:0; }
+      a{ color:inherit; border-bottom:none; }
+      .toolbar{ display:none; }
+      hr{ margin:.6rem 0; }
+    }
+  </style>
+
+  <!-- Optional structured data (harmless if ignored by crawlers) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Quin McElhiney",
+    "email":"mailto:quintenmcelhiney@gmail.com",
+    "telephone":"+14133626558",
+    "alumniOf":[{"@type":"CollegeOrUniversity","name":"Amherst College"}],
+    "knowsAbout":[
+      "Mathematics","Computer Science","Data Analysis","Electronics","Embedded Systems",
+      "UNIX","LaTeX","Python","Java","JavaScript","C","HTML","Rust","Perl","Bash","AWS","Data Science"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <main class="page" role="main">
+    <header>
+      <h1>QUIN MCELHINEY</h1>
+      <div class="meta">
+        <a href="mailto:quintenmcelhiney@gmail.com">quintenmcelhiney@gmail.com</a>
+        <span>•</span>
+        <a href="tel:+14133626558">413-362-6558</a>
+      </div>
+      <div class="toolbar">
+        <!-- Update href to your hosted PDF if desired -->
+        <a class="btn" href="resume_24.pdf" download>Download PDF</a>
+        <a class="btn" href="#skills">Skills</a>
+        <a class="btn" href="#experience">Experience</a>
+        <a class="btn" href="#education">Education</a>
+      </div>
+      <hr />
+    </header>
+
+    <!-- EDUCATION -->
+    <section id="education" aria-labelledby="ed-h">
+      <h2 id="ed-h">Education</h2>
+      <article class="item">
+        <div>
+          <div class="school">Amherst College, Amherst, MA</div>
+          <div class="org">B.S. in Mathematics &amp; Computer Science; Concentrations in Architecture, Philosophy, Studio Arts</div>
+        </div>
+        <div class="when">
+          <time datetime="2019-07">7/2019</time>–<time datetime="2023-06">6/2023</time>
+        </div>
+      </article>
+
+      <article class="item">
+        <div>
+          <div class="school">Salisbury School, Salisbury, CT</div>
+          <ul class="bullets">
+            <li>Cum Laude (2017)</li>
+            <li>First Scholar (2016, 2017, 2018)</li>
+            <li>Founder, Salisbury Astronomy Club (2017)</li>
+          </ul>
+        </div>
+        <div class="when">
+          <time datetime="2015-09">9/2015</time>–<time datetime="2018-06">6/2018</time>
+        </div>
+      </article>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" aria-labelledby="ex-h">
+      <h2 id="ex-h">Work Experience</h2>
+
+      <article class="item">
+        <div>
+          <div class="role">Visiting Scholar / Data Analyst</div>
+          <div class="org">University of Colorado Boulder</div>
+          <ul class="bullets">
+            <li>Multi-tier research environment; complex topics; analytical tooling (including bespoke tools).</li>
+          </ul>
+        </div>
+        <div class="when">
+          <time datetime="2024-03">3/2024</time>–<time datetime="2024-11">11/2024</time>
+        </div>
+      </article>
+
+      <article class="item">
+        <div>
+          <div class="role">IT Technician</div>
+          <div class="org">Gershon &amp; Co.</div>
+          <ul class="bullets">
+            <li>OS configuration, website/code maintenance, network security.</li>
+          </ul>
+        </div>
+        <div class="when">
+          <time datetime="2019-01">1/2019</time>–<time datetime="2023-06">6/2023</time>
+        </div>
+      </article>
+
+      <article class="item">
+        <div>
+          <div class="role">Teaching Assistant</div>
+          <div class="org">Amherst College — CS Department</div>
+          <ul class="bullets">
+            <li>Assisted advanced courses in Artificial Intelligence and Cyber-Security.</li>
+          </ul>
+        </div>
+        <div class="when">
+          <time datetime="2021-08">8/2021</time>–<time datetime="2022-01">1/2022</time>
+        </div>
+      </article>
+
+      <article class="item">
+        <div>
+          <div class="role">Research Fellow (Computer Science)</div>
+          <div class="org">Amherst College</div>
+          <ul class="bullets">
+            <li>Electronics lab: relay-based computers for security research; chip design, power management, assembly programming.</li>
+          </ul>
+        </div>
+        <div class="when">
+          <time datetime="2019-05">5/2019</time>–<time datetime="2021-03">3/2021</time>
+        </div>
+      </article>
+
+      <article class="item">
+        <div>
+          <div class="role">Research Assistant (Phage Lab)</div>
+          <div class="org">Great Barrington, MA</div>
+          <ul class="bullets">
+            <li>Extracted phage from soil; cataloged, inspected, and named novel species.</li>
+          </ul>
+        </div>
+        <div class="when">
+          <time datetime="2015-04">4/2015</time>–<time datetime="2016-09">9/2016</time>
+        </div>
+      </article>
+    </section>
+
+    <!-- OTHER -->
+    <section id="other" aria-labelledby="ot-h">
+      <h2 id="ot-h">Other</h2>
+      <article class="item">
+        <div>
+          <div class="role">Pending Research Paper</div>
+          <div class="org">Aaron Clauset’s Research Group — CU Boulder</div>
+        </div>
+        <div class="when"><time datetime="2024-11">11/2024</time></div>
+      </article>
+
+      <article class="item">
+        <div>
+          <div class="role">Fellowship — Power Optimization in Cluster Computing</div>
+          <div class="org">Amherst College</div>
+        </div>
+        <div class="when">
+          <time datetime="2022-09">9/2022</time>–<time datetime="2023-06">6/2023</time>
+        </div>
+      </article>
+
+      <article class="item">
+        <div>
+          <div class="role">Experimental Psychology Fellow</div>
+          <div class="org">Boston University</div>
+        </div>
+        <div class="when"><time datetime="2017-07">7/2017</time>–<time datetime="2017-08">8/2017</time></div>
+      </article>
+
+      <article class="item">
+        <div>
+          <div class="role">Astronomy Lab</div>
+          <div class="org">Salisbury School</div>
+        </div>
+        <div class="when"><time datetime="2016-03">3/2016</time>–<time datetime="2018-04">4/2018</time></div>
+      </article>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" aria-labelledby="sk-h">
+      <h2 id="sk-h">Skills</h2>
+      <ul class="skills">
+        <li>Organization / itemization</li>
+        <li>Quantitative aptitude</li>
+        <li>Electronic design &amp; engineering</li>
+        <li>Soldering; phone/computer repair</li>
+        <li>UNIX, TeX</li>
+        <li>Programming: Python, Java, JavaScript, C, HTML, Rust, Perl, Bash</li>
+        <li>Data science</li>
+        <li>iMerchant, ADP, AWS</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

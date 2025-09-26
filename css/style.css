@@ -10,6 +10,7 @@
   --accent-color: #eaeaea;
   
   --white: #eaeaea;
+  --muted: #aaaaaa;
   --header-h: 10px;
 
 }
@@ -31,6 +32,17 @@ body {
   text-align: left;
 }
 
+.meta{
+  color: var(--white);
+  display: flex;
+  flex-wrap:wrap;
+  gap: .75rem;
+}
+
+.meta a{
+  border-bottom: none;
+}
+
 .head {
   position: fixed;
   display: flex;
@@ -43,6 +55,107 @@ body {
   z-index: 1000;
   font-weight: bold;
 }
+
+.toolbar{
+  margin: 0.6rem 0 1.4rem;
+  dispaly: flex;
+  gap: 0.775rem;
+  flex-wrap: wrap;
+}
+.button {
+  position: relative;
+  color: var(--white);
+  text-decoration: none;
+  display: inline-block;
+  transition: all var(--t-fast) var(--easing);
+  padding: 1px;
+  cursor: pointer;
+  margin-inline: 1px;
+
+}
+.button:hover{
+  letter-spacing: .1rem;
+  background-color: var(--accent-color);
+  color: #000000;
+
+}
+
+.button::before,
+.button::after{
+  content:"";
+  position: relative;
+  transition: all var(--t-fast) var(--easing);
+}
+
+.button::before{
+  content:" [";
+  margin-right:1px;
+}
+
+.button::after {
+  content:"] ";
+  margin-left:1px;
+}
+.button:hover::before{
+  content:"[";
+  margin-right:1rem;
+  transition: all var(--t-fast) var(--easing);
+}
+.button:hover::after{
+  content:"]";
+  margin-left:1rem;
+  transition: all var(--t-fast) var(--easing);
+}
+
+hr{
+  border: 0;
+  border-top: 1px solid var(--muted);
+  margin: 1.2rem 0;
+}
+
+/*--- Resume layout ---- */ 
+
+section{ margin: 1.2rem 0 1.6rem;}
+h2{ font-size: 1.05rem; letter-spacing:0.08em;}
+
+.item{
+  display:grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.25rem;
+  padding: 0.6rem 0 ;
+  border-bottom: 1px dashed var(--muted);
+}
+.item:last-child{
+  border-bottom: 0;
+}
+.role, .school{
+  font-weight:600;
+}
+.org, .place{
+  color: var(--muted);
+}
+.when{
+  color:var(--muted);
+  white-space:nowrap;
+}
+.bullets{
+  grid-column: 1 / -1;
+  margin: 0.25rem 0 0 .95rem;
+  list-style-type: square;
+}
+.bullets li{
+  margin: 0.15rem 0;
+}
+.skills {
+  columns: 2 18rem;
+  column-gap: 2rem;
+}
+.skills li{
+  break-inside: avoid;
+  margin: 0.15rem 0;
+}
+/*-----------------*/ 
+
 
 .logo {
   display: inline-grid;
