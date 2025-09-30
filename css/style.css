@@ -115,9 +115,20 @@ hr{
 
 /*--- Resume layout ---- */ 
 
-section{ margin: 1.2rem 0 1.6rem;}
-h2{ font-size: 1.05rem; letter-spacing:0.08em;}
-
+section{ 
+margin: 1.2rem 0 1.6rem;
+}
+h2{ 
+  font-size: 1.05rem; 
+  letter-spacing:0.08em;
+  font-weight: 600;
+  color: black;
+  background-color: var(--white);
+  transition: all var(--t-slow) var(--easing);
+}
+h2:hover{
+  letter-spacing:0.1em;
+}
 .item{
   display:grid;
   grid-template-columns: 1fr auto;
