@@ -241,7 +241,7 @@ l {
 }
 l:hover{
   letter-spacing: .1rem;
-  background-color: #ff5700;
+  background-color: var(--accent-color);
   color: #000000;
 
 }
